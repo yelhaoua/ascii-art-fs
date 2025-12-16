@@ -24,6 +24,5 @@ func Splite(fileName string) [][]string {
 		res = append(res, all[i:i+8])
 	}
 
-	fmt.Println(res)
 	return res
 }
