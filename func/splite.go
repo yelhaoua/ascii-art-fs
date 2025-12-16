@@ -1,18 +1,17 @@
 package asciiart
 
 import (
-	"fmt"
 	"os"
 	"strings"
 )
 
 func Splite(fileName string) [][]string {
+
 	var res [][]string
 	var all []string
 	// Define the path of the banners
 	data, err := os.ReadFile("./banners/" + fileName + ".txt")
 	if err != nil {
-		fmt.Println(err)
 		return [][]string{}
 	}
 
