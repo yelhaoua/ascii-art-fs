@@ -35,7 +35,7 @@ func PrintSymbole(array [][]string, word string) {
 	// spliting the word
 	words := strings.Split(word, "\n")
 
-	// Print each word 
+	// Print each word
 	for _, s := range words {
 		output(s, array)
 	}
