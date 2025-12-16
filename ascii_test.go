@@ -33,6 +33,7 @@ O--O o-o | | o-o         |   O--o o-o o-o o-o o
 o  o o-o o o o-o         o   o  o o-o o   o-o O 
                                                 
                                                 `}
+
 	arr = asciiart.Splite("standard")
 	res = append(res, asciiart.PrintSymbole(arr, "hello"))
 	arr = asciiart.Splite("shadow")
