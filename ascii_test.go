@@ -7,6 +7,8 @@ import (
 )
 
 func TestHelloName(t *testing.T) {
+	testname := []string{"hello", "Hello There!", "Hello There!"}
+	testbanner := []string{"standard", "shadow", "thinkertoy"}
 	var res []string
 	var arr [][]string
 	expected := []string{` _              _   _          
@@ -34,14 +36,10 @@ o  o o-o o o o-o         o   o  o o-o o   o-o O
                                                 
                                                 `}
 									
-
-	arr = asciiart.Splite("standard")
-	res = append(res, asciiart.PrintSymbole(arr, "hello"))
-	arr = asciiart.Splite("shadow")
-	res = append(res, asciiart.PrintSymbole(arr, "Hello There!"))
-	arr = asciiart.Splite("thinkertoy")
-	res = append(res, asciiart.PrintSymbole(arr, "Hello There!"))
-
+	for i, v := range testname {
+		arr = asciiart.Splite(testbanner[i])
+		res = append(res, asciiart.PrintSymbole(arr, v))
+	}
 	for i := 0; i < len(expected); i++ {
 		if res[i] == expected[i] {
 			println("Test Pass ")

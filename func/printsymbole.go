@@ -1,11 +1,12 @@
 package asciiart
 
 import (
+	"fmt"
 	"strings"
 )
 
 func output(str string, array [][]string) string {
-	text := ""
+	out := ""
 	// start looping to8 the hieght of line
 	for i := 0; i < 8; i++ {
 		for _, fin := range str {
@@ -13,25 +14,26 @@ func output(str string, array [][]string) string {
 			if fin > 126 || fin < 32 {
 				continue
 			}
-			text += array[int(rune(fin)-32)][i]
+			out += array[int(rune(fin)-32)][i]
 		}
 		if i != 7 {
-
-			text += "\n"
+			out += "\n"
 		}
 
 	}
-	return text
+	return out
 }
 
 func PrintSymbole(array [][]string, word string) string {
-	res := ""
+	
+	out := ""
 	// check if the word not empty and the array of banner
 	if word == "" || len(array) == 0 {
 		return ""
 	}
 	// change the \n as string to newline
 	str := strings.ReplaceAll(word, `\n`, "\n")
+	fmt.Println(str)
 
 	// skip addional newline in print
 	if strings.Trim(str, "\n") == "" {
@@ -43,7 +45,7 @@ func PrintSymbole(array [][]string, word string) string {
 
 	// Print each word
 	for _, s := range words {
-		res = output(s, array)
+		out = output(s, array)
 	}
-	return res
+	return out
 }

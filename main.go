@@ -8,48 +8,23 @@ import (
 )
 
 func main() {
-
 	if len(os.Args) == 2 {
+		// here is default banner
 		Content := asciiart.Splite("standard")
 		// os.args[1] == the user text
-		asciiart.PrintSymbole(Content, os.Args[1])
+		results := asciiart.PrintSymbole(Content, os.Args[1])
+		fmt.Println(results)
 	} else if len(os.Args) == 3 {
-		// os.args[2] == te name of  banner
+		// os.args[2] == the name of  banner
 		Content := asciiart.Splite(os.Args[2])
 		// os.args[1] == the user text
-		asciiart.PrintSymbole(Content, os.Args[1])
+		results := asciiart.PrintSymbole(Content, os.Args[1])
+		if len(results) != 0 {
+			fmt.Println(results)
+		}
 	} else {
-		if len(os.Args) == 3 {
-			// os.args[2] == te name of  banner
-			Content := asciiart.Splite(os.Args[2])
-			// os.args[1] == the user text
-			asciiart.PrintSymbole(Content, os.Args[1])
-		} else if len(os.Args) == 2 {
-			// os.args[2] == te name of  banner
-			Content := asciiart.Splite("standard")
-			// os.args[1] == the user text
-			asciiart.PrintSymbole(Content, os.Args[1])
-		} else {
-			printErr()
-
-			return
-		}
-
-		if len(os.Args) == 3 {
-			// os.args[2] == te name of  banner
-			Content := asciiart.Splite(os.Args[2])
-			// os.args[1] == the user text
-			asciiart.PrintSymbole(Content, os.Args[1])
-		} else if len(os.Args) == 2 {
-			// os.args[2] == te name of  banner
-			Content := asciiart.Splite("standard")
-			// os.args[1] == the user text
-			asciiart.PrintSymbole(Content, os.Args[1])
-		} else {
-			printErr()
-			return
-
-		}
+		printErr()
+		return
 	}
 }
 
